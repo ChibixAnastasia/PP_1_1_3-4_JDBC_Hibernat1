@@ -1,24 +1,23 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Objects;
 
-@Table(name = "firstuser")
+import javax.persistence.*;
+import java.io.Serializable;
+
 @Entity
-public class User {
+@Table
+public class User implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "username")
+    @Column
     private String name;
 
-    @Column (name = "userlastname")
+    @Column
     private String lastName;
 
-    @Column (name = "userage")
+    @Column
     private Byte age;
 
     public User() {
