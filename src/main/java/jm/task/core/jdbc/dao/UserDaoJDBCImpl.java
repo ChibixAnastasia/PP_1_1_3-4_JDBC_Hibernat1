@@ -3,6 +3,7 @@ package jm.task.core.jdbc.dao;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
+import javax.sound.midi.Soundbank;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,6 +32,7 @@ public class UserDaoJDBCImpl implements UserDao {
         public void dropUsersTable() {
             try( Statement state = Util.getConnect().createStatement()) {
                 state.executeUpdate("DROP TABLE USERS");
+                System.out.println("Таблица удалена.");
             } catch (SQLException e){
                 System.out.println("Не удалось удалить таблицу USERS");
             }
@@ -53,6 +55,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void removeUserById(long iD) {
         try(PreparedStatement state = Util.getConnect().prepareStatement(String.valueOf(iD))) {
             state.executeUpdate("DELETE FROM users WHERE id =" + iD);
+            System.out.println("Пользователь с ID =  " + iD + " удален.");
         } catch (SQLException e) {
             System.out.println("Не удалось удалить пользователя.");
         }
@@ -80,6 +83,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void cleanUsersTable() {
             try(Statement state = Util.getConnect().createStatement()) {
                 state.execute("TRUNCATE users");
+                System.out.println("Таблица очищена.");
             } catch (SQLException e) {
                 System.out.println("Не удалось очистить таблицу.");
             }
