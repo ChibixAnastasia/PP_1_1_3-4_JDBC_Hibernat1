@@ -21,25 +21,26 @@ public class UserServiceImpl implements UserService {
     }
 
     public void saveUser(String name, String lastName, byte age) {
-       userDaoJDBC.saveUser(name, lastName, age);
-       // userDaoHibernate.saveUser(name, lastName, age);
+      // userDaoJDBC.saveUser(name, lastName, age);
+        userDaoHibernate.saveUser(name, lastName, age);
     }
 
     public void removeUserById(long id) {
-        userDaoJDBC.removeUserById(id);
-       // userDaoHibernate.removeUserById(id);
+       // userDaoJDBC.removeUserById(id);
+        userDaoHibernate.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        List<User> list = userDaoJDBC.getAllUsers();
-        return userDaoJDBC.getAllUsers();
-      // return userDaoHibernate.getAllUsers();
+      //  List<User> list = userDaoJDBC.getAllUsers();
+        List<User> list = userDaoHibernate.getAllUsers();
+      //  return userDaoJDBC.getAllUsers();
+       return userDaoHibernate.getAllUsers();
 
 
     }
 
     public void cleanUsersTable() {
-        userDaoJDBC.cleanUsersTable();
-       // userDaoHibernate.cleanUsersTable();
+       // userDaoJDBC.cleanUsersTable();
+        userDaoHibernate.cleanUsersTable();
     }
 }
