@@ -57,65 +57,7 @@ public class Util {
 
 
 
-    /* private static StandardServiceRegistry registry;
-        private static SessionFactory sessionFactory;
 
-        public static SessionFactory getSessionFactory() {
-            if (sessionFactory == null) {
-                try {
-                    StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
-
-                    Map<String, String> settingsMap = new HashMap<>();
-                    settingsMap.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                    settingsMap.put(Environment.URL, "jdbc:mysql://localhost:3306/first_schema");
-                    settingsMap.put(Environment.USER, "root");
-                    settingsMap.put(Environment.PASS, "nastya567");
-                    settingsMap.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
-
-                    registryBuilder.applySettings(settingsMap);
-
-                    registry = registryBuilder.build();
-
-                    MetadataSources sources = new MetadataSources(registry);
-                    sources.addAnnotatedClass(User.class);
-                    Metadata metadata = sources.getMetadataBuilder().build();
-
-                    sessionFactory = (SessionFactory) metadata.getSessionFactoryBuilder().build();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    if (registry != null) {
-                        StandardServiceRegistryBuilder.destroy(registry);
-                    }
-                }
-            }
-            return sessionFactory;
-        }*/
-
- /*if (registry != null) {
-         StandardServiceRegistryBuilder.destroy(registry);
-         }*/
-
-/*   User user1 = new User();
-        user1.setName("Igor");
-        user1.setLastName("Degtur");
-        user1.setAge(44);
-        util.save(user1);
-
-        Users users2 = new Users();
-        users2.setName("Sara");
-        users2.setEmail("sarra_mother@gmail.com");
-        users2.setPassword("qwerty123");
-        usersCRUD.save(users2);
-
-        usersCRUD.getAll().forEach(it->System.out.println(it));
-
-        Users userWithId1 = usersCRUD.getById(5);
-        System.out.println(userWithId1);
-
-        usersCRUD.delete(userWithId1);
-
-        usersCRUD.getAll().forEach(it->System.out.println(it));*/
 
 
 
